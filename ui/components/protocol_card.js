@@ -1,0 +1,1 @@
+const protocolCardHTML=c=>`<article class="panel card ${c.level}"><div class="head"><h3>${NAMES[c.id]}</h3><span class="pill">${LV[c.level]}</span></div><div class="bar"><i style="width:${c.score}%"></i></div><p class="score">Puntaje de riesgo: ${c.score} de 100</p><p>${c.reason}</p>${c.level==="ok"?"":`<p class="act">${ACT[c.id][c.level]}</p>`}</article>`;

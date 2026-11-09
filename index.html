@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Monitor de salud para misiones largas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ui/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>Monitor de salud para misiones largas</h1>
+  <p class="sub">Evalúa cuatro sistemas del cuerpo frente a la línea base de cada astronauta y recomienda qué hacer, sin conexión con la Tierra. Datos simulados.</p>
+
+  <div class="panel controls">
+    <div class="seg" id="scen" role="group" aria-label="Escenario de misión"></div>
+    <div class="row">
+      <label for="day" id="dayLbl"></label>
+      <input id="day" type="range" min="1" max="180" value="66">
+      <button class="play" id="play" type="button">Reproducir misión</button>
+      <button class="play" id="watchBtn" type="button">Vista reloj</button>
+    </div>
+    <p class="base" id="base"></p>
+  </div>
+
+  <div class="main" id="app">
+    <section class="banner" id="banner" aria-live="polite"></section>
+    <section class="grid" id="cards"></section>
+  </div>
+  <section class="watchwrap" id="watchwrap" hidden>
+    <div class="watch" id="watch" aria-live="polite"></div>
+    <button class="play" id="back" type="button">Volver al panel</button>
+  </section>
+
+  <footer id="foot">
+    <p>Los umbrales de esta demostración parten de la literatura de la NASA: pérdida ósea de 1 a 1,5 % mensual, sueño en vuelo de 6 a 6,5 h frente a 8,5 h programadas, intolerancia ortostática en cerca del 30 % de los astronautas tras el vuelo y activación inmunitaria sostenida en el Estudio de Gemelos. Los valores exactos de alerta son parámetros de ingeniería propios.</p>
+    <p>Los puntajes se calculan con reglas explicables y una media móvil exponencial (EWMA) sobre la variabilidad cardiaca. Es una herramienta de apoyo a la decisión, no un dispositivo médico.</p>
+  </footer>
+</div>
+
+<!-- Scripts clásicos, en orden de dependencia: así la página también funciona al abrirla con doble clic. -->
+<script src="data/preflight_profile.js"></script>
+<script src="data/mission_simulator.js"></script>
+<script src="logic/helpers.js"></script>
+<script src="logic/baseline.js"></script>
+<script src="logic/protocol_cardio.js"></script>
+<script src="logic/protocol_bone.js"></script>
+<script src="logic/protocol_immune.js"></script>
+<script src="logic/protocol_mental.js"></script>
+<script src="logic/combinator.js"></script>
+<script src="storage/local_store.js"></script>
+<script src="ui/components/scenario_selector.js"></script>
+<script src="ui/components/banner.js"></script>
+<script src="ui/components/protocol_card.js"></script>
+<script src="ui/components/watch_face.js"></script>
+<script src="ui/dashboard.js"></script>
+</body>
+</html>

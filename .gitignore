@@ -1,0 +1,53 @@
+# Dependencias
+node_modules/
+bower_components/
+vendor/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Archivos temporales y registros
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+*.log
+tmp/
+temp/
+.cache/
+
+# Resultados de compilación y despliegue
+dist/
+build/
+.vercel/
+.netlify/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claves y secretos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+id_rsa*
+id_ed25519*
+secrets.*
+credentials.*
+.npmrc
+
+# Configuración personal de editores y herramientas
+.vscode/
+.idea/
+.claude/
+*.local
+*.local.json
