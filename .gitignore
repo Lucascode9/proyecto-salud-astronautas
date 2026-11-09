@@ -19,6 +19,9 @@ tmp/
 temp/
 .cache/
 
+# Referencia local de la verificación
+tools/golden.json
+
 # Resultados de compilación y despliegue
 dist/
 build/

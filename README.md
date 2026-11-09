@@ -15,7 +15,7 @@ Abre `index.html` en el navegador con doble clic. No hace falta instalar nada ni
 ```
 index.html                  Página principal
 data/
-  preflight_profile.js      Perfil preflight simulado
+  simulation_params.js      Parámetros de la simulación (estimados, no mediciones)
   mission_simulator.js      Días de misión de cada escenario
 logic/                      Reglas de evaluación (sin HTML ni sensores)
   helpers.js                Utilidades compartidas

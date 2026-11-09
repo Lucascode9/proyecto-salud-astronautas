@@ -3,7 +3,7 @@ let scen="car", timer=null;
 const $=id=>document.getElementById(id);
 
 function render(){
-  const d=+$("day").value, r=evaluate(simulateMission(scen,d),PREFLIGHT_PROFILE), o=overall(r.cards);
+  const d=+$("day").value, r=evaluate(simulateMission(scen,d),SIM_PARAMS.preflight), o=overall(r.cards);
   $("dayLbl").textContent=`Día de misión ${d} de 180`;
   $("base").textContent=r.base.nb<7?`Línea base: calibrando, día ${r.base.nb} de 7. Parte del perfil preflight y gana peso con los datos en vuelo.`:`Línea base calibrada: variabilidad cardiaca ${f(r.base.hrv)} ms y pulso en reposo ${f(r.base.rhr)} lpm (perfil preflight más primeros 7 días en vuelo).`;
   $("banner").className="banner "+o.level;
